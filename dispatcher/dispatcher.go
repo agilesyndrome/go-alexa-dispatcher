@@ -2,7 +2,7 @@ package dispatcher
 
 import (
   "github.com/arienmalec/alexa-go"
-  "github.com/agilesyndrome/go-alexa-dispatcher/welcome"
+  "github.com/agilesyndrome/go-alexa-dispatcher/LaunchRequest"
 )
 
 var (
@@ -19,5 +19,5 @@ func Dispatch(request alexa.Request) (alexa.Response) {
 }
 
 func init() {
-  RequestMap['LaunchRequest'] = Welcome
+  RequestMap['LaunchRequest'] = LaunchRequest.Welcome
 }
