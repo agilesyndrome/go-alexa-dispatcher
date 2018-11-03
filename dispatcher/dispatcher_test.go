@@ -7,8 +7,15 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/arienmalec/alexa-go"
 	"github.com/agilesyndrome/go-alexa-i18n/alexai18n"
+	"github.com/agilesyndrome/go-alexa-dispatcher/LaunchRequest"
 //	"github.com/davecgh/go-spew/spew"
 )
+
+func check(err error)  {
+  if (err != nil) {
+    panic(err)
+  }
+}
 
 //HELPER FUNCTIONS
 func checkResponse(testFile string) (alexa.Response) {
@@ -44,7 +51,7 @@ func TestLaunchRequest(t *testing.T) {
 
 }
 
-func BasicTests(t *test.T) {
+func TestStandardRequests(t *testing.T) {
   assert.Equal(t, true, welcome.Test())
 }
 

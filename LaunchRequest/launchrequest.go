@@ -10,7 +10,7 @@ func Test() (bool) {
 }
 
 func Handler(request alexa.Request) (alexa.Response, error) {
-  retValue := staticintent.Simple(request, "welcome")
-  return retValue, nil
+  retValue, err := staticintent.Simple(request, "welcome")
+  return retValue, err
 
 }

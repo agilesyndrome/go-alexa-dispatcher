@@ -4,6 +4,8 @@ github.com/agilesyndrome/go-alexa-staticintent v0.0.0-20181103203001-49ad4ae9bc4
 github.com/agilesyndrome/go-alexa-staticintent v0.0.0-20181103203001-49ad4ae9bc40/go.mod h1:h8k66OfBDM20iVpJlruW3N9uDqVFGvarx6x0vfPm3gY=
 github.com/agilesyndrome/go-alexa-staticintent v0.0.0-20181103230111-b4298d7ecc42 h1:CBR9PZzEl22KNMvFbZp7am7fjdkbWsVxbr4KNCpJk2I=
 github.com/agilesyndrome/go-alexa-staticintent v0.0.0-20181103230111-b4298d7ecc42/go.mod h1:h8k66OfBDM20iVpJlruW3N9uDqVFGvarx6x0vfPm3gY=
+github.com/agilesyndrome/go-alexa-staticintent v0.0.0-20181103235254-ace08fac33f8 h1:fWXYJHj48gVBIFm+TOR8bw4ETZjHnDHV8UpvYur/NIU=
+github.com/agilesyndrome/go-alexa-staticintent v0.0.0-20181103235254-ace08fac33f8/go.mod h1:h8k66OfBDM20iVpJlruW3N9uDqVFGvarx6x0vfPm3gY=
 github.com/arienmalec/alexa-go v0.0.0-20180809023015-3f017bd00f9b/go.mod h1:r3auYxsVOE8VOWVAGQn8eoZSwarziuVK+35Pi4dgtcM=
 github.com/arienmalec/alexa-go v0.0.0-20181025212142-975687393e90 h1:/UEvmje8rZLGNjx6pTKMtVxrN8xcFMWCAcODiEBCsaI=
 github.com/arienmalec/alexa-go v0.0.0-20181025212142-975687393e90/go.mod h1:r3auYxsVOE8VOWVAGQn8eoZSwarziuVK+35Pi4dgtcM=
