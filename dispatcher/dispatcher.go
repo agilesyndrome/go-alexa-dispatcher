@@ -33,4 +33,7 @@ func init() {
   RequestMap["SessionEndedRequest"] = goodbye.Handler
   //RequestMap["IntentRequest"] = dispatcher.Intent
 
+  welcome.Test()
+  //goodbye.Test()
+
 }

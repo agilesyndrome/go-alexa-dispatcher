@@ -44,6 +44,10 @@ func TestLaunchRequest(t *testing.T) {
 
 }
 
+func BasicTests(t *test.T) {
+  assert.Equal(t, true, welcome.Test())
+}
+
 func TestSessionEndedRequest(t *testing.T) {
   assertSimpleResponse("../tests/SessionEndedRequest.json", "Things For Life", "World", t)
 }

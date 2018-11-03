@@ -5,6 +5,10 @@ import (
   "github.com/agilesyndrome/go-alexa-staticintent/staticintent"
 )
 
+func Test() (bool) {
+  return true
+}
+
 func Handler(request alexa.Request) (alexa.Response, error) {
   retValue := staticintent.Simple(request, "goodbye")
   return retValue, nil
