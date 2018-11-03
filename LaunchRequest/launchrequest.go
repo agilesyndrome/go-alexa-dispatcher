@@ -5,6 +5,6 @@ import (
   "github.com/agilesyndrome/go-alexa-staticintent/staticintent"
 )
 
-func Welcome(request alexa.request) (alexa.response) {
+func Welcome(request alexa.Request) (alexa.Response) {
   return staticintent.Simple(request, "welcome")
 }
