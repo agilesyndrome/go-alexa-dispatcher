@@ -6,6 +6,9 @@ import (
   "github.com/agilesyndrome/go-alexa-dispatcher/LaunchRequest"
   "github.com/agilesyndrome/go-alexa-dispatcher/SessionEndedRequest"
   "github.com/agilesyndrome/go-alexa-dispatcher/ErrorResponse"
+  "github.com/agilesyndrome/go-alexa-dispatcher/HelpIntent"
+  "github.com/agilesyndrome/go-alexa-dispatcher/FallbackIntent"
+  "github.com/agilesyndrome/go-alexa-dispatcher/StopIntent"
   "github.com/agilesyndrome/go-alexa-staticintent/staticintent"
 )
 
@@ -65,6 +68,8 @@ func Validate() {
   */
   welcome.Test()
   goodbye.Test()
+  help.Test()
+  fallback.Test()
 }
 
 func init() {
@@ -73,6 +78,14 @@ func init() {
   //RequestMap["CanFulfillIntentRequest"] = dispatcher.NotImplemented
   RequestMap["SessionEndedRequest"] = goodbye.Handler
   RequestMap["IntentRequest"] = DispatchIntent
+
+  //Default Intents include help, fallback, and stop
+  IntentMap[alexa.HelpIntent] = help.Handler
+  IntentMap["AMAZON.FallbackIntent"] = fallback.Handler
+  IntentMap["AMAZON.StopIntent"] = stop.Handler
+
+  //No need to add hello.Handler, if it isn't listed, it'll show up as statichandler
+
   Validate()
 
 
