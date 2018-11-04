@@ -18,7 +18,6 @@ func Dispatch(request alexa.Request) (alexa.Response, error) {
   // TODO: Return fallback if reqest.Body.Type is unmatched
   vf := RequestMap[request.Body.Type]
   if (vf == nil) {
-    panic("WOAH NELLY")
     vf = staticintent.Handler 
   }
   response, err := vf(request)
@@ -28,8 +27,12 @@ func Dispatch(request alexa.Request) (alexa.Response, error) {
 func DispatchIntent(request alexa.Request) (alexa.Response, error) {
   var response alexa.Response
 
-  // TODO: Return fallback if request.Body.Intent.Name is unmatched
   vf := IntentMap[request.Body.Intent.Name]
+
+  //You didn't register an intent, so we'll use the static intent to just read text
+  if ( vf == nil ) {
+   vf = staticintent.Handler
+  }
 
   response, err := vf(request)
   return response, err
