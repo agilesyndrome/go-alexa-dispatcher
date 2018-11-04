@@ -11,6 +11,7 @@ func Test() (bool) {
 
 func Handler(request alexa.Request) (alexa.Response, error) {
   retValue, err := staticintent.Simple(request, "welcome")
+  retValue.Body.ShouldEndSession = false 
   return retValue, err
 
 }
