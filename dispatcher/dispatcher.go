@@ -1,9 +1,11 @@
 package dispatcher
 
 import (
+  "errors"
   "github.com/arienmalec/alexa-go"
   "github.com/agilesyndrome/go-alexa-dispatcher/LaunchRequest"
   "github.com/agilesyndrome/go-alexa-dispatcher/SessionEndedRequest"
+  "github.com/agilesyndrome/go-alexa-dispatcher/ErrorResponse"
   "github.com/agilesyndrome/go-alexa-staticintent/staticintent"
 )
 
@@ -14,13 +16,29 @@ var (
   IntentMap map[string] AlexaHandler = map[string] AlexaHandler {}
 )
 
+
 func Dispatch(request alexa.Request) (alexa.Response, error) {
-  // TODO: Return fallback if reqest.Body.Type is unmatched
   vf := RequestMap[request.Body.Type]
+
+  /*Amazon could potentially add new things here and break this on a whim
+    Hopefully this response will keep things sluding along, but you should
+    make sure something like IOPipes or other logging tool records this error
+  */
+
+  var response alexa.Response
+  var err error
+
   if (vf == nil) {
-    vf = staticintent.Handler 
+    vf = kaput.Handler
+    response,err = vf(request)
+
+    //We don't need any errors from kaput, we'll make our own at this point
+    //If kaput is broken, we're all fucked anyway
+    err = errors.New("I don't know how to handle a " + request.Body.Type + "request type")
+  } else {
+    response, err = vf(request)
   }
-  response, err := vf(request)
+  
   return response, err
 }
 
