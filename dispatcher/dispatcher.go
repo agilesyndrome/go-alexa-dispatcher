@@ -75,6 +75,7 @@ func Validate() {
 func init() {
   //Four main types of Requests: Launch, CanFulfill, SessionEnded, and Intent
   RequestMap["LaunchRequest"] = welcome.Handler
+  //TODO: Support CanFulfillIntentRequest
   //RequestMap["CanFulfillIntentRequest"] = dispatcher.NotImplemented
   RequestMap["SessionEndedRequest"] = goodbye.Handler
   RequestMap["IntentRequest"] = DispatchIntent
